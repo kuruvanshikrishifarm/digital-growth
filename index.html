@@ -207,13 +207,11 @@
 <body>
 
     <div class="main-container" id="mainPage">
-        <!-- Header Content -->
         <div class="header-section">
             <h1>Showroom<br>Digital<br>Growth</h1>
             <p>Elevate your brand with premium web presence, social media & professional video editing.</p>
         </div>
 
-        <!-- Plan 1: Premium Monthly Subscription -->
         <div class="pricing-card" onclick="openForm('Showroom All-Inclusive (₹10,000 / month)')">
             <div class="price-title">Showroom All-Inclusive</div>
             <div class="price-amount">₹10,000 / month (Monthly Subscription)</div>
@@ -226,7 +224,6 @@
             </ul>
         </div>
 
-        <!-- Plan 2: Basic One-Time Plan -->
         <div class="pricing-card" onclick="openForm('Normal Website Setup (₹7,000 Base)')">
             <div class="price-title">Normal Website Setup</div>
             <div class="price-amount">₹7,000 (One-Time Setup)</div>
@@ -237,7 +234,6 @@
             </ul>
         </div>
 
-        <!-- Plan 3: Per Edit Add-on -->
         <div class="pricing-card" onclick="openForm('Website Edits Add-on (₹500 / edit)')">
             <div class="price-title">Website Edits (Add-on)</div>
             <div class="price-amount">₹500 / edit</div>
@@ -247,7 +243,6 @@
             </ul>
         </div>
 
-        <!-- Plan 4: Only Editing -->
         <div class="pricing-card" onclick="openForm('Delivery Reel Editing Service (₹1,000 / reel)')">
             <div class="price-title">Delivery Reel Editing Service</div>
             <div class="price-amount">₹1,000 / reel (Only Editing)</div>
@@ -257,31 +252,29 @@
             </ul>
         </div>
 
-        <!-- Single Form Section -->
         <div class="form-section" id="bookingFormSection">
             <h3 id="formHeading">Book Your Plan</h3>
-            <form id="leadForm" onsubmit="submitDetails(event)">
-                <input type="text" id="userName" class="input-box" placeholder="Your Name" required>
-                <input type="tel" id="userMobile" class="input-box" placeholder="Mobile Number (e.g., 9876543210)" pattern="[0-9]{10}" title="Enter valid 10-digit mobile number" required>
-                <input type="text" id="userLocation" class="input-box" placeholder="Your Location (City/Area)" required>
-                <input type="text" id="brandName" class="input-box" placeholder="Brand Name / Showroom Name" required>
-                <select id="selectedPlanDisplay" class="input-box" required>
+            <form id="leadForm" action="https://formspree.io/f/mqkvkoyz" method="POST">
+                <input type="text" name="Name" class="input-box" placeholder="Your Name" required>
+                <input type="tel" name="Mobile" class="input-box" placeholder="Mobile Number (e.g., 9876543210)" pattern="[0-9]{10}" title="Enter valid 10-digit mobile number" required>
+                <input type="text" name="Location" class="input-box" placeholder="Your Location (City/Area)" required>
+                <input type="text" name="BrandName" class="input-box" placeholder="Brand Name / Showroom Name" required>
+                <select name="SelectedPlan" class="input-box" id="selectedPlanDisplay" required>
                     <option value="">Select Plan</option>
                     <option value="Showroom All-Inclusive (₹10,000 / month)">Showroom All-Inclusive (₹10,000 / month)</option>
                     <option value="Normal Website Setup (₹7,000)">Normal Website Setup (₹7,000)</option>
                     <option value="Website Edits Add-on (₹500 / edit)">Website Edits Add-on (₹500 / edit)</option>
                     <option value="Delivery Reel Editing Service (₹1,000 / reel)">Delivery Reel Editing Service (₹1,000 / reel)</option>
                 </select>
-                <button type="submit" class="submit-btn" id="submitBtnText">Submit Request</button>
+                <button type="submit" class="submit-btn">Submit Request</button>
             </form>
         </div>
     </div>
 
-    <!-- Thank You Modal -->
     <div id="thankYouModal">
         <div class="thank-you-box">
             <h2>Thank You!</h2>
-            <p>Your request has been submitted successfully. Owner will contact you shortly.</p>
+            <p>Thank you, owner may contact you shortly.</p>
             <button class="ok-btn" onclick="resetToFrontPage()">OK</button>
         </div>
     </div>
@@ -294,23 +287,26 @@
             formSection.scrollIntoView({ behavior: 'smooth' });
         }
 
-        function submitDetails(event) {
+        const form = document.getElementById("leadForm");
+        
+        async function handleSubmit(event) {
             event.preventDefault();
-            
-            const name = document.getElementById('userName').value;
-            const mobile = document.getElementById('userMobile').value;
-            const location = document.getElementById('userLocation').value;
-            const brand = document.getElementById('brandName').value;
-            const plan = document.getElementById('selectedPlanDisplay').value;
-
-            const subject = encodeURIComponent("New Plan Booking: " + brand);
-            const body = encodeURIComponent("Name: " + name + "\nMobile Number: " + mobile + "\nLocation: " + location + "\nBrand Name: " + brand + "\nSelected Plan: " + plan);
-            
-            // Yeh aapke Gmail par direct draft / redirect karega bina kisi API error ke
-            window.location.href = `mailto:seenukaurav09@gmail.com?subject=${subject}&body=${body}`;
-
-            document.getElementById('thankYouModal').style.display = 'flex';
+            const data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('thankYouModal').style.display = 'flex';
+                }
+            }).catch(error => {
+                document.getElementById('thankYouModal').style.display = 'flex';
+            });
         }
+        form.addEventListener("submit", handleSubmit)
 
         function resetToFrontPage() {
             document.getElementById('thankYouModal').style.display = 'none';
