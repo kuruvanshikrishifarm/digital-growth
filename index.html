@@ -261,7 +261,7 @@
         <div class="form-section" id="bookingFormSection">
             <h3 id="formHeading">Book Your Plan</h3>
             <form id="leadForm" onsubmit="submitDetails(event)">
-                <!-- Web3Forms Access Key (Aapko apna free access key yahan dalna hai, instructions neeche hain) -->
+                <!-- APNI ACCESS KEY YAHAN PASTE KAREIN (Yahan 'YOUR_WEB3FORMS_ACCESS_KEY' ki jagah apni asli key daalni hai) -->
                 <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
                 
                 <input type="text" id="userName" name="name" class="input-box" placeholder="Your Name" required>
@@ -324,7 +324,7 @@
                     // Show Thank You Screen
                     document.getElementById('thankYouModal').style.display = 'flex';
                 } else {
-                    alert("Something went wrong. Please try again.");
+                    alert("Something went wrong. Please check your Access Key.");
                 }
             } catch (error) {
                 alert("Network error. Please check your connection.");
@@ -336,7 +336,6 @@
 
         function resetToFrontPage() {
             document.getElementById('thankYouModal').style.display = 'none';
-            document.getElementById('bookingFormSection').classList.remove('access_key') // cleanup
             document.getElementById('leadForm').reset();
             document.getElementById('bookingFormSection').classList.remove('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
