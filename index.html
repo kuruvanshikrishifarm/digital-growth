@@ -303,14 +303,12 @@
             const brand = document.getElementById('brandName').value;
             const plan = document.getElementById('selectedPlanDisplay').value;
 
-            // Direct mailto link preparation for seenukaurav09@gmail.com
-            const subject = encodeURIComponent("New Lead: " + brand);
+            const subject = encodeURIComponent("New Plan Booking: " + brand);
             const body = encodeURIComponent("Name: " + name + "\nMobile Number: " + mobile + "\nLocation: " + location + "\nBrand Name: " + brand + "\nSelected Plan: " + plan);
             
-            // Trigger mail client in background / open mail draft
+            // Yeh aapke Gmail par direct draft / redirect karega bina kisi API error ke
             window.location.href = `mailto:seenukaurav09@gmail.com?subject=${subject}&body=${body}`;
 
-            // Show Thank You screen immediately
             document.getElementById('thankYouModal').style.display = 'flex';
         }
 
