@@ -45,16 +45,22 @@
             font-size: 1.2em;
             font-weight: bold;
         }
-        .package-card {
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .pricing-card {
             background: #2a2a2a;
             padding: 15px;
-            margin-top: 15px;
             border-radius: 8px;
             border-left: 5px solid #ffb300;
         }
-        .package-card h3 {
+        .pricing-card h3 {
             color: #ffb300;
             margin-top: 0;
+            margin-bottom: 5px;
         }
         .form-section {
             margin-top: 20px;
@@ -103,23 +109,31 @@
         <p>Elevate your brand with premium web presence, social media & professional video editing.</p>
     </header>
 
-    <div class="package-card">
-        <h3>Showroom All-Inclusive</h3>
-        <p><strong>₹10,000 / month (Monthly Subscription)</strong></p>
-        <ul>
-            <li>Complete Website Development & Maintenance</li>
-            <li>All Website Changes & Updates Absolutely Free</li>
-            <li>Complete Social Media Marketing & Management</li>
-            <li>Dedicated Delivery Reel Shoots for Showroom</li>
-            <li>Regular Premium Updates & Business Growth</li>
-        </ul>
+    <div class="section-title">📦 Our Pricing Plans / पैकेज मूल्य सूची</div>
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <h3>Starter Plan – ₹500 / month</h3>
+            <p>Basic social media optimization and initial setup.</p>
+        </div>
+        <div class="pricing-card">
+            <h3>Growth Plan – ₹1,000 / month</h3>
+            <p>Regular updates, standard content management, and basic branding.</p>
+        </div>
+        <div class="pricing-card">
+            <h3>Advanced Plan – ₹7,000 / month</h3>
+            <p>Comprehensive digital growth, regular video editing, and active management.</p>
+        </div>
+        <div class="pricing-card">
+            <h3>Showroom All-Inclusive – ₹10,000 / month (Monthly Subscription)</h3>
+            <p>Complete Website Development & Maintenance, All Website Changes & Updates Free, Complete Social Media Marketing, Dedicated Delivery Reel Shoots.</p>
+        </div>
     </div>
 
-    <div class="section-title">📦 Book Your Package Now</div>
+    <div class="section-title">📝 Service Booking Form / सेवा बुकिंग फॉर्म</div>
     <div class="form-section">
         <form action="https://formspree.io/f/mqkvkoyz" method="POST">
             <!-- Formspree configurations -->
-            <input type="hidden" name="_subject" value="New Client Lead - Showroom Digital Growth!">
+            <input type="hidden" name="_subject" value="New Client Booking - Showroom Digital Growth!">
             
             <div class="form-group">
                 <label for="Client_Name">आपका नाम / शोरूम का नाम (Full Name / Showroom):</label>
@@ -140,11 +154,14 @@
                 <label for="Selected_Package">प्लान चुनें (Select Plan):</label>
                 <select id="Selected_Package" name="Selected_Package" required>
                     <option value="">-- प्लान चुनें --</option>
-                    <option value="Showroom All-Inclusive - ₹10,000/month">Showroom All-Inclusive - ₹10,000/month</option>
+                    <option value="Starter Plan - ₹500/month">Starter Plan - ₹500 / month</option>
+                    <option value="Growth Plan - ₹1000/month">Growth Plan - ₹1,000 / month</option>
+                    <option value="Advanced Plan - ₹7000/month">Advanced Plan - ₹7,000 / month</option>
+                    <option value="Showroom All-Inclusive - ₹10000/month">Showroom All-Inclusive - ₹10,000 / month</option>
                 </select>
             </div>
 
-            <button type="submit">बुकिंग सबमिट करें (Send Booking)</button>
+            <button type="submit">बुकिंग सबमिट करें (Submit Booking)</button>
         </form>
     </div>
 
