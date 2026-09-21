@@ -1,327 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showroom Digital Growth</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: #0b0b0b;
-            color: #ffffff;
-            width: 100%;
-            overflow-x: hidden;
-        }
+  <title>Kuruvanshi Krishi Farm House</title>
 
-        .main-container {
-            width: 100%;
-            min-height: 100vh;
-            padding: 20px 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        .header-section {
-            text-align: center;
-            margin-bottom: 25px;
-            width: 100%;
-        }
+    body {
+      background: #f4f7f2;
+      color: #1f2d20;
+      line-height: 1.6;
+    }
 
-        .header-section h1 {
-            font-size: 32px;
-            color: #ffbb00;
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 12px;
-        }
+    header {
+      background: linear-gradient(135deg, #123b20, #287443);
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+    }
 
-        .header-section p {
-            font-size: 15px;
-            color: #cccccc;
-            width: 100%;
-            padding: 0 5px;
-            line-height: 1.5;
-        }
+    header h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
 
-        /* Pricing Card Style */
-        .pricing-card {
-            width: 100%;
-            background-color: #141414;
-            border: 2px solid #ffbb00;
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
+    header p {
+      font-size: 17px;
+      opacity: 0.95;
+    }
 
-        .pricing-card:hover {
-            border-color: #ffd700;
-            background-color: #1a1a1a;
-        }
+    .container {
+      max-width: 850px;
+      margin: 35px auto;
+      padding: 0 18px;
+    }
 
-        .price-title {
-            font-size: 19px;
-            color: #ffbb00;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
 
-        .price-amount {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
+    .card h2 {
+      color: #17632e;
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
 
-        .price-features {
-            list-style: none;
-            color: #dddddd;
-            font-size: 14px;
-        }
+    .card p {
+      color: #555;
+      margin-bottom: 20px;
+    }
 
-        .price-features li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
+    label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 7px;
+      font-weight: bold;
+      color: #263c2b;
+    }
 
-        .price-features li::before {
-            content: "✦ ";
-            color: #ffbb00;
-            margin-right: 8px;
-            font-size: 16px;
-        }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd5cc;
+      border-radius: 10px;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+    }
 
-        /* Form Container (Popup/Section) */
-        .form-section {
-            width: 100%;
-            background-color: #161616;
-            border: 1px solid #ffbb00;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            display: none;
-        }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #258344;
+      box-shadow: 0 0 0 3px rgba(37,131,68,0.10);
+    }
 
-        .form-section.active {
-            display: block;
-        }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
 
-        .form-section h3 {
-            font-size: 18px;
-            color: #ffbb00;
-            margin-bottom: 15px;
-            text-align: center;
-        }
+    .submit-btn {
+      width: 100%;
+      margin-top: 24px;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #17632e, #2d8a4c);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-        .input-box, select.input-box {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            background-color: #0b0b0b;
-            border: 1px solid #444;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 14px;
-        }
+    .submit-btn:hover {
+      opacity: 0.92;
+    }
 
-        .input-box:focus {
-            border-color: #ffbb00;
-            outline: none;
-        }
+    .info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
 
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #ffbb00;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    .info-box {
+      background: #f0f7f1;
+      padding: 18px;
+      border-radius: 12px;
+    }
 
-        .submit-btn:hover {
-            background-color: #ffa500;
-        }
+    .info-box strong {
+      color: #17632e;
+    }
 
-        /* Thank You Modal/Screen */
-        #thankYouModal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            z-index: 999;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    footer {
+      text-align: center;
+      background: #123b20;
+      color: white;
+      padding: 25px 15px;
+      margin-top: 40px;
+    }
 
-        .thank-you-box {
-            background-color: #161616;
-            border: 2px solid #ffbb00;
-            padding: 30px 20px;
-            border-radius: 12px;
-            text-align: center;
-            width: 100%;
-            max-width: 350px;
-        }
+    .required {
+      color: #d71919;
+    }
 
-        .thank-you-box h2 {
-            color: #ffbb00;
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 27px;
+      }
 
-        .thank-you-box p {
-            color: #ccc;
-            font-size: 14px;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
+      .card {
+        padding: 22px 17px;
+      }
 
-        .ok-btn {
-            background-color: #ffbb00;
-            color: #000;
-            padding: 10px 25px;
-            border: none;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-    </style>
+      .info {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="main-container" id="mainPage">
-        <!-- Header Content -->
-        <div class="header-section">
-            <h1>Showroom<br>Digital<br>Growth</h1>
-            <p>Elevate your brand with premium web presence, social media & professional video editing.</p>
-        </div>
+<header>
+  <h1>Kuruvanshi Krishi Farm House</h1>
+  <p>Jhanjhankheda, Gadarwara, Narsinghpur, Madhya Pradesh</p>
+</header>
 
-        <!-- Plan 1: Premium Monthly Subscription -->
-        <div class="pricing-card" onclick="openForm('Showroom All-Inclusive (₹10,000 / month)')">
-            <div class="price-title">Showroom All-Inclusive</div>
-            <div class="price-amount">₹10,000 / month (Monthly Subscription)</div>
-            <ul class="price-features">
-                <li>Complete Website Development & Maintenance</li>
-                <li>All Website Changes & Updates Absolutely Free</li>
-                <li>Complete Social Media Marketing & Handling</li>
-                <li>Dedicated Delivery Reel Shoots for Showroom</li>
-                <li>Regular Premium Updates & Business Growth Strategy</li>
-            </ul>
-        </div>
+<div class="container">
 
-        <!-- Plan 2: Basic One-Time Plan -->
-        <div class="pricing-card" onclick="openForm('Normal Website Setup (₹7,000 Base)')">
-            <div class="price-title">Normal Website Setup</div>
-            <div class="price-amount">₹7,000 (One-Time Setup)</div>
-            <ul class="price-features">
-                <li>Standard Professional Business Website</li>
-                <li>Clean Design & Fast Loading Speed</li>
-                <li>Mobile-Responsive Layout</li>
-            </ul>
-        </div>
+  <div class="card">
+    <h2>Showroom / Dealership Enquiry</h2>
+    <p>
+      Apni details submit karein. Hamari team aapse jald contact karegi.
+    </p>
 
-        <!-- Plan 3: Per Edit Add-on -->
-        <div class="pricing-card" onclick="openForm('Website Edits Add-on (₹500 / edit)')">
-            <div class="price-title">Website Edits (Add-on)</div>
-            <div class="price-amount">₹500 / edit</div>
-            <ul class="price-features">
-                <li>Adding new features or content updates</li>
-                <li>Quick modifications after launch</li>
-            </ul>
-        </div>
+    <!-- FORM -->
+    <form
+      action="https://formsubmit.co/seenukaurav09@gmail.com"
+      method="POST"
+    >
 
-        <!-- Plan 4: Only Editing -->
-        <div class="pricing-card" onclick="openForm('Delivery Reel Editing Service (₹1,000 / reel)')">
-            <div class="price-title">Delivery Reel Editing Service</div>
-            <div class="price-amount">₹1,000 / reel (Only Editing)</div>
-            <ul class="price-features">
-                <li>Professional Delivery Reel Editing & Post-Production</li>
-                <li>Cinematic Transitions and Optimized Social Media Formatting</li>
-            </ul>
-        </div>
+      <!-- FormSubmit Settings -->
+      <input type="hidden" name="_subject" value="New Enquiry - Kuruvanshi Krishi Farm House">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
 
-        <!-- Single Form Section -->
-        <div class="form-section" id="bookingFormSection">
-            <h3 id="formHeading">Book Your Plan</h3>
-            <form onsubmit="submitDetails(event)">
-                <input type="text" id="userName" class="input-box" placeholder="Your Name" required>
-                <input type="text" id="userLocation" class="input-box" placeholder="Your Location (City/Area)" required>
-                <input type="text" id="brandName" class="input-box" placeholder="Brand Name / Showroom Name" required>
-                <select id="selectedPlanDisplay" class="input-box" required>
-                    <option value="">Select Plan</option>
-                    <option value="Showroom All-Inclusive (₹10,000 / month)">Showroom All-Inclusive (₹10,000 / month)</option>
-                    <option value="Normal Website Setup (₹7,000)">Normal Website Setup (₹7,000)</option>
-                    <option value="Website Edits Add-on (₹500 / edit)">Website Edits Add-on (₹500 / edit)</option>
-                    <option value="Delivery Reel Editing Service (₹1,000 / reel)">Delivery Reel Editing Service (₹1,000 / reel)</option>
-                </select>
-                <button type="submit" class="submit-btn">Submit Request</button>
-            </form>
-        </div>
+      <!-- Submit ke baad website par wapas -->
+      <input
+        type="hidden"
+        name="_next"
+        value="https://kuruvanshikrishifarm.github.io/digital-growth/"
+      >
+
+      <label>
+        Aapka Naam <span class="required">*</span>
+      </label>
+
+      <input
+        type="text"
+        name="Name"
+        placeholder="Apna poora naam likhein"
+        required
+      >
+
+      <label>
+        Mobile Number <span class="required">*</span>
+      </label>
+
+      <input
+        type="tel"
+        name="Mobile Number"
+        placeholder="10 digit mobile number"
+        pattern="[6-9][0-9]{9}"
+        maxlength="10"
+        required
+      >
+
+      <label>
+        Location <span class="required">*</span>
+      </label>
+
+      <input
+        type="text"
+        name="Location"
+        placeholder="City / Village"
+        required
+      >
+
+      <label>
+        Brand / Showroom Name <span class="required">*</span>
+      </label>
+
+      <input
+        type="text"
+        name="Brand / Showroom"
+        placeholder="Brand ya showroom ka naam"
+        required
+      >
+
+      <label>
+        Aap kis type ki enquiry karna chahte hain?
+      </label>
+
+      <select name="Enquiry Type">
+        <option value="Showroom">Showroom</option>
+        <option value="Dealership">Dealership</option>
+        <option value="Business Enquiry">Business Enquiry</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label>
+        Message
+      </label>
+
+      <textarea
+        name="Message"
+        placeholder="Apni requirement yahan likhein..."
+      ></textarea>
+
+      <button type="submit" class="submit-btn">
+        Submit Enquiry
+      </button>
+
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Contact Information</h2>
+
+    <div class="info">
+
+      <div class="info-box">
+        <strong>📍 Location</strong>
+        <br>
+        Jhanjhankheda, Gadarwara,
+        Narsinghpur, MP
+      </div>
+
+      <div class="info-box">
+        <strong>📧 Email</strong>
+        <br>
+        seenukaurav09@gmail.com
+      </div>
+
     </div>
+  </div>
 
-    <!-- Thank You Modal -->
-    <div id="thankYouModal">
-        <div class="thank-you-box">
-            <h2>Thank You!</h2>
-            <p>Owner will contact you shortly.</p>
-            <button class="ok-btn" onclick="resetToFrontPage()">OK</button>
-        </div>
-    </div>
+</div>
 
-    <script>
-        function openForm(planName) {
-            const formSection = document.getElementById('bookingFormSection');
-            formSection.classList.add('active');
-            document.getElementById('selectedPlanDisplay').value = planName;
-            formSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function submitDetails(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('userName').value;
-            const location = document.getElementById('userLocation').value;
-            const brand = document.getElementById('brandName').value;
-            const plan = document.getElementById('selectedPlanDisplay').value;
-
-            // Email submission to seenukaurav09@gmail.com
-            const subject = encodeURIComponent("New Plan Booking from Website: " + brand);
-            const body = encodeURIComponent("Name: " + name + "\nLocation: " + location + "\nBrand/Showroom Name: " + brand + "\nSelected Plan: " + plan);
-            
-            // Background email client trigger
-            window.location.href = `mailto:seenukaurav09@gmail.com?subject=${subject}&body=${body}`;
-
-            // Show Thank You Screen
-            document.getElementById('thankYouModal').style.display = 'flex';
-        }
-
-        function resetToFrontPage() {
-            document.getElementById('thankYouModal').style.display = 'none';
-            document.getElementById('bookingFormSection').classList.remove('active');
-            document.getElementById('userName').value = '';
-            document.getElementById('userLocation').value = '';
-            document.getElementById('brandName').value = '';
-            document.getElementById('selectedPlanDisplay').value = '';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+<footer>
+  <p>© 2026 Kuruvanshi Krishi Farm House</p>
+  <p>All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
