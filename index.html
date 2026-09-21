@@ -24,11 +24,11 @@
       background: #111827;
       color: white;
       text-align: center;
-      padding: 45px 20px;
+      padding: 55px 20px;
     }
 
     header h1 {
-      font-size: 38px;
+      font-size: 40px;
       margin-bottom: 10px;
     }
 
@@ -40,7 +40,7 @@
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 45px 20px;
+      padding: 50px 20px;
     }
 
     .title {
@@ -59,7 +59,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
 
@@ -90,17 +90,43 @@
       margin: 9px 0;
     }
 
-    .btn {
+    /* PORTFOLIO */
+
+    .portfolio-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .portfolio-card h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-card p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .demo-btn {
       display: inline-block;
       background: #111827;
       color: white;
-      padding: 12px 22px;
+      padding: 13px 25px;
       border-radius: 8px;
       text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
+      font-weight: bold;
     }
+
+    .demo-btn:hover {
+      background: #000;
+    }
+
+    /* FORM */
 
     .form-box {
       max-width: 650px;
@@ -172,7 +198,7 @@
       }
 
       section {
-        padding: 35px 15px;
+        padding: 40px 15px;
       }
 
       .form-box {
@@ -184,12 +210,18 @@
 
 <body>
 
+  <!-- HEADER -->
+
   <header>
     <h1>Digital Growth</h1>
     <p>Grow Your Business With Digital Solutions</p>
   </header>
 
+
+  <!-- SERVICES -->
+
   <section>
+
     <div class="title">
       <h2>Our Services</h2>
       <p>Simple and affordable digital solutions for businesses</p>
@@ -199,6 +231,7 @@
 
       <div class="card">
         <h3>Showroom All-Inclusive</h3>
+
         <div class="price">₹10,000/month</div>
 
         <ul>
@@ -210,8 +243,10 @@
         </ul>
       </div>
 
+
       <div class="card">
         <h3>Business Website</h3>
+
         <div class="price">₹7,000</div>
 
         <ul>
@@ -223,8 +258,10 @@
         </ul>
       </div>
 
+
       <div class="card">
         <h3>Website Editing</h3>
+
         <div class="price">₹500/edit</div>
 
         <ul>
@@ -235,8 +272,10 @@
         </ul>
       </div>
 
+
       <div class="card">
         <h3>Reel Editing</h3>
+
         <div class="price">₹1,000/reel</div>
 
         <ul>
@@ -248,8 +287,42 @@
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- PORTFOLIO / DEMO -->
+
+  <section>
+
+    <div class="title">
+      <h2>Our Demo Work</h2>
+      <p>Check out a sample website created for a tractor dealership.</p>
+    </div>
+
+    <div class="portfolio-card">
+
+      <h3>🚜 Kuruvanshi Tractor Demo</h3>
+
+      <p>
+        A professional tractor dealership website with
+        tractor details, enquiry features and a mobile-friendly design.
+      </p>
+
+      <a
+        class="demo-btn"
+        href="https://publishedweb01.github.io/kuruvanshi-tactor-demo/"
+        target="_blank"
+      >
+        View Live Demo
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ENQUIRY FORM -->
 
   <section>
 
@@ -265,67 +338,88 @@
         method="POST"
       >
 
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_subject"
-               value="New Digital Growth Client Enquiry">
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Digital Growth Client Enquiry"
+        >
 
-        <input type="hidden" name="_captcha"
-               value="false">
+        <input
+          type="hidden"
+          name="_captcha"
+          value="false"
+        >
 
-        <input type="hidden" name="_template"
-               value="table">
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
 
-        <input type="hidden" name="_next"
-               value="https://publishedweb01.github.io/digital-growth/thankyou.html">
+        <input
+          type="hidden"
+          name="_next"
+          value="https://publishedweb01.github.io/digital-growth/thankyou.html"
+        >
 
 
         <div class="form-group">
           <label>Full Name *</label>
+
           <input
             type="text"
             name="Name"
             placeholder="Enter your name"
-            required>
+            required
+          >
         </div>
 
 
         <div class="form-group">
           <label>Showroom / Business Name *</label>
+
           <input
             type="text"
             name="Business Name"
             placeholder="Enter business name"
-            required>
+            required
+          >
         </div>
 
 
         <div class="form-group">
           <label>Location *</label>
+
           <input
             type="text"
             name="Location"
             placeholder="City / District"
-            required>
+            required
+          >
         </div>
 
 
         <div class="form-group">
           <label>Mobile Number *</label>
+
           <input
             type="tel"
             name="Mobile Number"
             placeholder="Enter your mobile number"
             inputmode="numeric"
-            required>
+            required
+          >
         </div>
 
 
         <div class="form-group">
           <label>Email (Optional)</label>
+
           <input
             type="email"
             name="Client Email"
-            placeholder="Enter your email">
+            placeholder="Enter your email"
+          >
         </div>
 
 
@@ -333,7 +427,11 @@
           <label>Select Service *</label>
 
           <select name="Service" required>
-            <option value="">Choose a service</option>
+
+            <option value="">
+              Choose a service
+            </option>
+
             <option value="Showroom All-Inclusive - ₹10,000/month">
               Showroom All-Inclusive - ₹10,000/month
             </option>
@@ -349,25 +447,34 @@
             <option value="Reel Editing - ₹1,000/reel">
               Reel Editing - ₹1,000/reel
             </option>
+
           </select>
+
         </div>
 
 
         <div class="form-group">
+
           <label>Your Requirement</label>
 
           <textarea
             name="Requirement"
-            placeholder="Tell us what you need..."></textarea>
+            placeholder="Tell us what you need..."
+          ></textarea>
+
         </div>
 
 
-        <button type="submit" class="submit-btn">
+        <button
+          type="submit"
+          class="submit-btn"
+        >
           Send Enquiry
         </button>
 
+
         <p class="note">
-          Your enquiry details will be sent securely to our email.
+          Your enquiry details will be sent to our email.
         </p>
 
       </form>
@@ -377,8 +484,14 @@
   </section>
 
 
+  <!-- FOOTER -->
+
   <footer>
-    <p>© 2026 Digital Growth. All Rights Reserved.</p>
+
+    <p>
+      © 2026 Digital Growth. All Rights Reserved.
+    </p>
+
   </footer>
 
 </body>
