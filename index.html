@@ -16,9 +16,9 @@
             max-width: 800px;
             margin: 20px auto;
             background: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
             border: 1px solid #333;
         }
         header {
@@ -30,6 +30,7 @@
         header h1 {
             color: #ffb300;
             margin: 0 0 5px 0;
+            font-size: 2em;
         }
         header p {
             color: #bbb;
@@ -40,8 +41,8 @@
             background: #ffb300;
             color: #121212;
             padding: 10px 15px;
-            border-radius: 5px;
-            margin-top: 20px;
+            border-radius: 6px;
+            margin-top: 25px;
             font-size: 1.2em;
             font-weight: bold;
         }
@@ -53,17 +54,30 @@
         }
         .pricing-card {
             background: #2a2a2a;
-            padding: 15px;
+            padding: 18px;
             border-radius: 8px;
             border-left: 5px solid #ffb300;
+            transition: transform 0.2s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-2px);
         }
         .pricing-card h3 {
             color: #ffb300;
             margin-top: 0;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+        .pricing-card p {
+            margin: 5px 0;
+            color: #ccc;
         }
         .form-section {
-            margin-top: 20px;
+            margin-top: 25px;
+            background: #242424;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #3d3d3d;
         }
         .form-group {
             margin-bottom: 15px;
@@ -72,29 +86,34 @@
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
-            color: #ddd;
+            color: #ffb300;
         }
         input, select {
             width: 100%;
-            padding: 10px;
-            background: #2a2a2a;
+            padding: 12px;
+            background: #1a1a1a;
             border: 1px solid #444;
             color: #fff;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 1em;
             box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            border-color: #ffb300;
+            outline: none;
         }
         button {
             background-color: #ffb300;
             color: #121212;
             border: none;
-            padding: 12px 20px;
+            padding: 14px 20px;
             font-size: 1.1em;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
             font-weight: bold;
             margin-top: 10px;
+            transition: background-color 0.2s;
         }
         button:hover {
             background-color: #ffa000;
@@ -109,23 +128,27 @@
         <p>Elevate your brand with premium web presence, social media & professional video editing.</p>
     </header>
 
-    <div class="section-title">📦 Our Pricing Plans / पैकेज मूल्य सूची</div>
+    <div class="section-title">💎 Our Premium Plans / हमारे प्रीमियम प्लान्स</div>
     <div class="pricing-grid">
         <div class="pricing-card">
             <h3>Starter Plan – ₹500 / month</h3>
-            <p>Basic social media optimization and initial setup.</p>
+            <p>Basic social media optimization, brand setup, and initial reach enhancement.</p>
         </div>
         <div class="pricing-card">
             <h3>Growth Plan – ₹1,000 / month</h3>
-            <p>Regular updates, standard content management, and basic branding.</p>
+            <p>Regular updates, standard content management, creative posting, and steady engagement.</p>
         </div>
         <div class="pricing-card">
             <h3>Advanced Plan – ₹7,000 / month</h3>
-            <p>Comprehensive digital growth, regular video editing, and active management.</p>
+            <p>Comprehensive digital growth, regular high-quality video editing, campaign management, and active support.</p>
         </div>
         <div class="pricing-card">
             <h3>Showroom All-Inclusive – ₹10,000 / month (Monthly Subscription)</h3>
-            <p>Complete Website Development & Maintenance, All Website Changes & Updates Free, Complete Social Media Marketing, Dedicated Delivery Reel Shoots.</p>
+            <p>• Complete Website Development & Maintenance<br>
+               • All Website Changes & Updates Absolutely Free<br>
+               • Complete Social Media Marketing & Management<br>
+               • Dedicated Delivery Reel Shoots for Showroom<br>
+               • Regular Premium Updates & Business Growth</p>
         </div>
     </div>
 
@@ -133,7 +156,7 @@
     <div class="form-section">
         <form action="https://formspree.io/f/mqkvkoyz" method="POST">
             <!-- Formspree configurations -->
-            <input type="hidden" name="_subject" value="New Client Booking - Showroom Digital Growth!">
+            <input type="hidden" name="_subject" value="New Client Lead - Showroom Digital Growth!">
             
             <div class="form-group">
                 <label for="Client_Name">आपका नाम / शोरूम का नाम (Full Name / Showroom):</label>
@@ -153,7 +176,7 @@
             <div class="form-group">
                 <label for="Selected_Package">प्लान चुनें (Select Plan):</label>
                 <select id="Selected_Package" name="Selected_Package" required>
-                    <option value="">-- प्लान चुनें --</option>
+                    <option value="">-- अपना प्लान चुनें --</option>
                     <option value="Starter Plan - ₹500/month">Starter Plan - ₹500 / month</option>
                     <option value="Growth Plan - ₹1000/month">Growth Plan - ₹1,000 / month</option>
                     <option value="Advanced Plan - ₹7000/month">Advanced Plan - ₹7,000 / month</option>
