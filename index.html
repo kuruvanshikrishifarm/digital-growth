@@ -1,602 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showroom Digital Growth</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <title>Digital Growth | Websites & Digital Marketing</title>
 
-        body {
-            background-color: #0b0b0b;
-            color: #ffffff;
-            width: 100%;
-            overflow-x: hidden;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        .main-container {
-            width: 100%;
-            min-height: 100vh;
-            padding: 20px 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    body {
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
 
-        .header-section {
-            text-align: center;
-            margin-bottom: 25px;
-            width: 100%;
-        }
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
 
-        .header-section h1 {
-            font-size: 32px;
-            color: #ffbb00;
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 12px;
-        }
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
 
-        .header-section p {
-            font-size: 15px;
-            color: #cccccc;
-            width: 100%;
-            padding: 0 5px;
-            line-height: 1.5;
-        }
+    header p {
+      font-size: 18px;
+      color: #d1d5db;
+    }
 
-        .pricing-card {
-            width: 100%;
-            background-color: #141414;
-            border: 2px solid #ffbb00;
-            border-radius: 12px;
-            padding: 18px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 20px;
+    }
 
-        .pricing-card:hover {
-            border-color: #ffd700;
-            background-color: #1a1a1a;
-        }
+    .title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        .price-title {
-            font-size: 19px;
-            color: #ffbb00;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
+    .title h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
 
-        .price-amount {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
+    .title p {
+      color: #666;
+    }
 
-        .price-features {
-            list-style: none;
-            color: #dddddd;
-            font-size: 14px;
-        }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-        .price-features li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
 
-        .price-features li::before {
-            content: "✦ ";
-            color: #ffbb00;
-            margin-right: 8px;
-            font-size: 16px;
-        }
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
 
-        .form-section {
-            width: 100%;
-            background-color: #161616;
-            border: 1px solid #ffbb00;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            display: none;
-        }
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
 
-        .form-section.active {
-            display: block;
-        }
+    .card ul {
+      list-style: none;
+      margin: 15px 0;
+    }
 
-        .form-section h3 {
-            font-size: 18px;
-            color: #ffbb00;
-            margin-bottom: 15px;
-            text-align: center;
-        }
+    .card li {
+      margin: 9px 0;
+    }
 
-        .input-box,
-        select.input-box {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            background-color: #0b0b0b;
-            border: 1px solid #444;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 14px;
-        }
+    .btn {
+      display: inline-block;
+      background: #111827;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-        .input-box:focus {
-            border-color: #ffbb00;
-            outline: none;
-        }
+    .form-box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
 
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #ffbb00;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    .form-group {
+      margin-bottom: 18px;
+    }
 
-        .submit-btn:hover {
-            background-color: #ffa500;
-        }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
 
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
 
-        #thankYouModal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            z-index: 999;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
 
-        .thank-you-box {
-            background-color: #161616;
-            border: 2px solid #ffbb00;
-            padding: 30px 20px;
-            border-radius: 12px;
-            text-align: center;
-            width: 100%;
-            max-width: 350px;
-        }
+    .submit-btn {
+      width: 100%;
+      background: #111827;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 17px;
+      cursor: pointer;
+    }
 
-        .thank-you-box h2 {
-            color: #ffbb00;
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
+    .submit-btn:hover {
+      background: #000;
+    }
 
-        .thank-you-box p {
-            color: #ccc;
-            font-size: 14px;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+      font-size: 14px;
+    }
 
-        .ok-btn {
-            background-color: #ffbb00;
-            color: #000;
-            padding: 10px 25px;
-            border: none;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-    </style>
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      section {
+        padding: 35px 15px;
+      }
+
+      .form-box {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="main-container" id="mainPage">
+  <header>
+    <h1>Digital Growth</h1>
+    <p>Grow Your Business With Digital Solutions</p>
+  </header>
 
-        <div class="header-section">
-            <h1>Showroom<br>Digital<br>Growth</h1>
-            <p>
-                Elevate your brand with premium web presence,
-                social media & professional video editing.
-            </p>
+  <section>
+    <div class="title">
+      <h2>Our Services</h2>
+      <p>Simple and affordable digital solutions for businesses</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Showroom All-Inclusive</h3>
+        <div class="price">₹10,000/month</div>
+
+        <ul>
+          <li>✔ Professional Website</li>
+          <li>✔ Social Media Support</li>
+          <li>✔ Reels & Content</li>
+          <li>✔ Digital Marketing</li>
+          <li>✔ Monthly Support</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Business Website</h3>
+        <div class="price">₹7,000</div>
+
+        <ul>
+          <li>✔ Professional Website</li>
+          <li>✔ Mobile Friendly Design</li>
+          <li>✔ Product/Service Section</li>
+          <li>✔ Contact Form</li>
+          <li>✔ Basic Support</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Website Editing</h3>
+        <div class="price">₹500/edit</div>
+
+        <ul>
+          <li>✔ Text Changes</li>
+          <li>✔ Image Changes</li>
+          <li>✔ Product Updates</li>
+          <li>✔ Small Design Changes</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Reel Editing</h3>
+        <div class="price">₹1,000/reel</div>
+
+        <ul>
+          <li>✔ Professional Editing</li>
+          <li>✔ Music</li>
+          <li>✔ Text & Captions</li>
+          <li>✔ Social Media Ready</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section>
+
+    <div class="title">
+      <h2>Get Started</h2>
+      <p>Fill the form and we will contact you shortly.</p>
+    </div>
+
+    <div class="form-box">
+
+      <form
+        action="https://formsubmit.co/seenukaurav09@gmail.com"
+        method="POST"
+      >
+
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject"
+               value="New Digital Growth Client Enquiry">
+
+        <input type="hidden" name="_captcha"
+               value="false">
+
+        <input type="hidden" name="_template"
+               value="table">
+
+        <input type="hidden" name="_next"
+               value="https://publishedweb01.github.io/digital-growth/thankyou.html">
+
+
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input
+            type="text"
+            name="Name"
+            placeholder="Enter your name"
+            required>
         </div>
 
-        <div class="pricing-card"
-             onclick="openForm('Showroom All-Inclusive (₹10,000 / month)')">
 
-            <div class="price-title">Showroom All-Inclusive</div>
-
-            <div class="price-amount">
-                ₹10,000 / month (Monthly Subscription)
-            </div>
-
-            <ul class="price-features">
-                <li>Complete Website Development & Maintenance</li>
-                <li>All Website Changes & Updates Absolutely Free</li>
-                <li>Complete Social Media Marketing & Handling</li>
-                <li>Dedicated Delivery Reel Shoots for Showroom</li>
-                <li>Regular Premium Updates & Business Growth Strategy</li>
-            </ul>
+        <div class="form-group">
+          <label>Showroom / Business Name *</label>
+          <input
+            type="text"
+            name="Business Name"
+            placeholder="Enter business name"
+            required>
         </div>
 
 
-        <div class="pricing-card"
-             onclick="openForm('Normal Website Setup (₹7,000 Base)')">
-
-            <div class="price-title">Normal Website Setup</div>
-
-            <div class="price-amount">
-                ₹7,000 (One-Time Setup)
-            </div>
-
-            <ul class="price-features">
-                <li>Standard Professional Business Website</li>
-                <li>Clean Design & Fast Loading Speed</li>
-                <li>Mobile-Responsive Layout</li>
-            </ul>
+        <div class="form-group">
+          <label>Location *</label>
+          <input
+            type="text"
+            name="Location"
+            placeholder="City / District"
+            required>
         </div>
 
 
-        <div class="pricing-card"
-             onclick="openForm('Website Edits Add-on (₹500 / edit)')">
-
-            <div class="price-title">Website Edits (Add-on)</div>
-
-            <div class="price-amount">
-                ₹500 / edit
-            </div>
-
-            <ul class="price-features">
-                <li>Adding new features or content updates</li>
-                <li>Quick modifications after launch</li>
-            </ul>
+        <div class="form-group">
+          <label>Mobile Number *</label>
+          <input
+            type="tel"
+            name="Mobile Number"
+            placeholder="Enter your mobile number"
+            inputmode="numeric"
+            required>
         </div>
 
 
-        <div class="pricing-card"
-             onclick="openForm('Delivery Reel Editing Service (₹1,000 / reel)')">
-
-            <div class="price-title">
-                Delivery Reel Editing Service
-            </div>
-
-            <div class="price-amount">
-                ₹1,000 / reel (Only Editing)
-            </div>
-
-            <ul class="price-features">
-                <li>Professional Delivery Reel Editing & Post-Production</li>
-                <li>Cinematic Transitions and Optimized Social Media Formatting</li>
-            </ul>
+        <div class="form-group">
+          <label>Email (Optional)</label>
+          <input
+            type="email"
+            name="Client Email"
+            placeholder="Enter your email">
         </div>
 
 
-        <!-- FORM -->
+        <div class="form-group">
+          <label>Select Service *</label>
 
-        <div class="form-section" id="bookingFormSection">
+          <select name="Service" required>
+            <option value="">Choose a service</option>
+            <option value="Showroom All-Inclusive - ₹10,000/month">
+              Showroom All-Inclusive - ₹10,000/month
+            </option>
 
-            <h3 id="formHeading">
-                Book Your Plan
-            </h3>
+            <option value="Business Website - ₹7,000">
+              Business Website - ₹7,000
+            </option>
 
-            <form onsubmit="submitDetails(event)">
+            <option value="Website Editing - ₹500/edit">
+              Website Editing - ₹500/edit
+            </option>
 
-                <input
-                    type="text"
-                    id="userName"
-                    class="input-box"
-                    placeholder="Your Name"
-                    required
-                >
-
-                <input
-                    type="text"
-                    id="userLocation"
-                    class="input-box"
-                    placeholder="Your Location (City/Area)"
-                    required
-                >
-
-                <input
-                    type="text"
-                    id="brandName"
-                    class="input-box"
-                    placeholder="Brand Name / Showroom Name"
-                    required
-                >
-
-                <!-- NEW MOBILE NUMBER FIELD -->
-
-                <input
-                    type="tel"
-                    id="userPhone"
-                    class="input-box"
-                    placeholder="Mobile Number"
-                    pattern="[0-9]{10}"
-                    maxlength="10"
-                    minlength="10"
-                    inputmode="numeric"
-                    required
-                >
-
-                <select
-                    id="selectedPlanDisplay"
-                    class="input-box"
-                    required
-                >
-                    <option value="">Select Plan</option>
-
-                    <option value="Showroom All-Inclusive (₹10,000 / month)">
-                        Showroom All-Inclusive (₹10,000 / month)
-                    </option>
-
-                    <option value="Normal Website Setup (₹7,000)">
-                        Normal Website Setup (₹7,000)
-                    </option>
-
-                    <option value="Website Edits Add-on (₹500 / edit)">
-                        Website Edits Add-on (₹500 / edit)
-                    </option>
-
-                    <option value="Delivery Reel Editing Service (₹1,000 / reel)">
-                        Delivery Reel Editing Service (₹1,000 / reel)
-                    </option>
-                </select>
-
-                <button
-                    type="submit"
-                    class="submit-btn"
-                >
-                    Submit Request
-                </button>
-
-            </form>
+            <option value="Reel Editing - ₹1,000/reel">
+              Reel Editing - ₹1,000/reel
+            </option>
+          </select>
         </div>
+
+
+        <div class="form-group">
+          <label>Your Requirement</label>
+
+          <textarea
+            name="Requirement"
+            placeholder="Tell us what you need..."></textarea>
+        </div>
+
+
+        <button type="submit" class="submit-btn">
+          Send Enquiry
+        </button>
+
+        <p class="note">
+          Your enquiry details will be sent securely to our email.
+        </p>
+
+      </form>
 
     </div>
 
+  </section>
 
-    <!-- THANK YOU MESSAGE -->
 
-    <div id="thankYouModal">
-
-        <div class="thank-you-box">
-
-            <h2>
-                Thank You!
-            </h2>
-
-            <p>
-                Owner will contact you shortly.
-            </p>
-
-            <button
-                class="ok-btn"
-                onclick="resetToFrontPage()"
-            >
-                OK
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <script>
-
-        function openForm(planName) {
-
-            const formSection =
-                document.getElementById('bookingFormSection');
-
-            formSection.classList.add('active');
-
-            document.getElementById(
-                'selectedPlanDisplay'
-            ).value = planName;
-
-            formSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
-
-        function submitDetails(event) {
-
-            event.preventDefault();
-
-            const form = event.target;
-
-            const name =
-                document.getElementById('userName').value;
-
-            const location =
-                document.getElementById('userLocation').value;
-
-            const brand =
-                document.getElementById('brandName').value;
-
-            const phone =
-                document.getElementById('userPhone').value;
-
-            const plan =
-                document.getElementById('selectedPlanDisplay').value;
-
-
-            /*
-                Direct website-to-email submission.
-
-                Gmail/app will NOT open.
-
-                Email will be sent to:
-                seenukaurav09@gmail.com
-            */
-
-            const formData = new FormData();
-
-            formData.append("Name", name);
-
-            formData.append("Location", location);
-
-            formData.append(
-                "Brand/Showroom Name",
-                brand
-            );
-
-            formData.append(
-                "Mobile Number",
-                phone
-            );
-
-            formData.append(
-                "Selected Plan",
-                plan
-            );
-
-            formData.append(
-                "_subject",
-                "New Plan Booking from Website: " + brand
-            );
-
-            formData.append(
-                "_captcha",
-                "false"
-            );
-
-            formData.append(
-                "_template",
-                "table"
-            );
-
-
-            const submitButton =
-                form.querySelector('.submit-btn');
-
-            submitButton.disabled = true;
-
-            submitButton.textContent =
-                "Submitting...";
-
-
-            fetch(
-                "https://formsubmit.co/ajax/seenukaurav09@gmail.com",
-                {
-                    method: "POST",
-
-                    body: formData,
-
-                    headers: {
-                        "Accept": "application/json"
-                    }
-                }
-            )
-
-            .then(response => {
-
-                if (!response.ok) {
-                    throw new Error(
-                        "Submission failed"
-                    );
-                }
-
-                return response.json();
-
-            })
-
-            .then(() => {
-
-                /*
-                    Show thank-you message
-                    only after successful submission.
-                */
-
-                document.getElementById(
-                    'thankYouModal'
-                ).style.display = 'flex';
-
-                submitButton.disabled = false;
-
-                submitButton.textContent =
-                    "Submit Request";
-
-            })
-
-            .catch(() => {
-
-                submitButton.disabled = false;
-
-                submitButton.textContent =
-                    "Submit Request";
-
-                alert(
-                    "Request submit nahi ho paayi. Please try again."
-                );
-
-            });
-
-        }
-
-
-        function resetToFrontPage() {
-
-            document.getElementById(
-                'thankYouModal'
-            ).style.display = 'none';
-
-            document.getElementById(
-                'bookingFormSection'
-            ).classList.remove('active');
-
-
-            document.getElementById(
-                'userName'
-            ).value = '';
-
-            document.getElementById(
-                'userLocation'
-            ).value = '';
-
-            document.getElementById(
-                'brandName'
-            ).value = '';
-
-            document.getElementById(
-                'userPhone'
-            ).value = '';
-
-            document.getElementById(
-                'selectedPlanDisplay'
-            ).value = '';
-
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-
-        }
-
-    </script>
+  <footer>
+    <p>© 2026 Digital Growth. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
